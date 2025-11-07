@@ -1,0 +1,10 @@
+# netlify.toml
+
+[build]
+  # สั่งให้ Netlify ติดตั้ง Dependencies ที่อยู่ใน root package.json ก่อน
+  command = "npm install" 
+  
+[functions]
+  # กำหนด Folder ที่เก็บ Serverless Functions
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
