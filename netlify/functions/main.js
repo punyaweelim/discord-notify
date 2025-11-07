@@ -32,7 +32,7 @@ app.post('/webhook/trigger', async (req, res) => { // <<< เปลี่ยน 
     const triggerPayload = req.body;
     const message = triggerPayload.message || '⚠️ แจ้งเตือนจากระบบ: ไม่ระบุข้อความ';
     const severity = triggerPayload.severity || 'INFO';
-    const systemName = triggerPayload.system || 'Unknown System';
+    const systemName = triggerPayload.system || 'Varapa Pay Notify';
     const imageUrl = triggerPayload.imageUrl;
 
     // สร้าง Embed Object และ Payload เหมือนเดิม...
