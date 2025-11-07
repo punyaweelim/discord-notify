@@ -6,7 +6,7 @@ const axios = require('axios');
 const serverless = require('serverless-http'); // <<< Import serverless-http
 
 const app = express();
-const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
+const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1436260232048414732/ZztGpLJuchVzwadbBT8LRRaXUi2Tuu4Uo5CmPQwYmvOXC9TjoPmJ1EZ4tX4Sc03CeDLc";
 
 // Middleware
 app.use(express.json());
@@ -26,7 +26,7 @@ const getColor = (level) => {
 
 // Webhook Receiver Endpoint (HTTP POST)
 // Endpoint Path: /api/webhook/trigger (จะถูกเรียกเป็น /api/discord-notifier/webhook/trigger)
-app.post('/webhook/trigger', async (req, res) => { // <<< เปลี่ยน Path เป็น /webhook/trigger
+app.post('/webhook', async (req, res) => { // <<< เปลี่ยน Path เป็น /webhook/trigger
     
     // ... (Logic การประมวลผล Payload, ดึง message, severity, imageUrl เหมือนเดิม)
     const triggerPayload = req.body;
